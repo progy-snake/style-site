@@ -1,14 +1,22 @@
-function searchStyle(styleName) {
-    const searchQuery = `STYLE ${styleName}`;
-    const googleSearchURL = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
-    window.open(googleSearchURL, '_blank');
-}
+// Знаходимо елементи форми
+const commentForm = document.getElementById('commentForm');
+const commentList = document.getElementById('commentList');
 
-document.getElementById('styleForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const styleDesc = document.getElementById('styleDesc').value;
-    const selectedStyle = document.getElementById('styles').value;
+// Додаємо подію на відправлення форми
+commentForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Зупиняємо перезавантаження сторінки
 
-    alert(`Thank you, ${name}! You chose ${selectedStyle} and described it as: "${styleDesc}"`);
+  // Отримуємо значення з форми
+  const name = document.getElementById('name').value;
+  const comment = document.getElementById('comment').value;
+
+  // Створюємо новий елемент для коментаря
+  const commentItem = document.createElement('div');
+  commentItem.innerHTML = `<strong>${name}:</strong> ${comment}`;
+
+  // Додаємо новий коментар до списку
+  commentList.appendChild(commentItem);
+
+  // Очищаємо форму
+  commentForm.reset();
 });
