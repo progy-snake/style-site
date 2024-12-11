@@ -1,48 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Design Styles</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сайт зі стилями</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Modern Design Styles</h1>
-    </header>
+  <header>
+    <h1>Обери свій стиль</h1>
+  </header>
+  <main>
     <section class="styles">
-        <div class="style-card" onclick="searchStyle('OPIUM')">
-            <img src="opium.jpg" alt="Opium Style">
-            <h2>STYLE OPIUM</h2>
-        </div>
-        <div class="style-card" onclick="searchStyle('Y2K')">
-            <img src="y2k.jpg" alt="Y2K Style">
-            <h2>STYLE Y2K</h2>
-        </div>
-        <div class="style-card" onclick="searchStyle('OLD MONEY')">
-            <img src="oldmoney.jpg" alt="Old Money Style">
-            <h2>STYLE OLD MONEY</h2>
-        </div>
+      <div class="style">
+        <img src="images/style1.jpg" alt="Стиль 1">
+        <p>Класичний стиль</p>
+      </div>
+      <div class="style">
+        <img src="images/style2.jpg" alt="Стиль 2">
+        <p>Спортивний стиль</p>
+      </div>
+      <div class="style">
+        <img src="images/style3.jpg" alt="Стиль 3">
+        <p>Кежуал стиль</p>
+      </div>
     </section>
-    <section>
-        <h2>If your style is not listed, describe it below:</h2>
-        <form id="styleForm">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="styleDesc">Describe Your Favorite Style:</label>
-            <textarea id="styleDesc" name="styleDesc" rows="4" required></textarea>
-
-            <label for="styles">Select a Style:</label>
-            <select id="styles" name="styles">
-                <option value="OPIUM">STYLE OPIUM</option>
-                <option value="Y2K">STYLE Y2K</option>
-                <option value="OLD MONEY">STYLE OLD MONEY</option>
-            </select>
-
-            <button type="submit">Submit</button>
-        </form>
+    <section class="comments">
+      <h2>Додайте свій коментар</h2>
+      <form id="commentForm">
+        <input type="text" id="name" placeholder="Ваше ім'я" required>
+        <textarea id="comment" placeholder="Ваш коментар" required></textarea>
+        <button type="submit">Залишити коментар</button>
+      </form>
+      <div id="commentList"></div>
     </section>
-    <script src="script.js"></script>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
+
